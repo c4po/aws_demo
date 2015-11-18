@@ -1,0 +1,13 @@
+wordpress:
+  image: wordpress
+  environment:
+    - "WORDPRESS_DB_HOST=db"
+    - "WORDPRESS_DB_PASSWORD=example"
+  ports:
+    - "80:80"
+
+db:
+  image: mariadb
+  container_name: db
+  environment:
+    MYSQL_ROOT_PASSWORD: example
