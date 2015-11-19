@@ -2,8 +2,6 @@ nginx:
   image: c4po/trinimbus-nginx
   ports:
     - "443:443"
-  links:
-    - wordpress
 
 wordpress:
   image: wordpress
