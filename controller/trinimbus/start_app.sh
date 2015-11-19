@@ -7,4 +7,4 @@ docker-compose --x-networking --x-network-driver overlay up -d
 
 
 # to add new node run this command. 
-# docker run -d --net=bin -e WORDPRESS_DB_HOST=db -e WORDPRESS_DB_PASSWORD=example -p 80:80 wordpress
+# docker run -d --net=trinimbus -e WORDPRESS_DB_HOST=db -e WORDPRESS_DB_PASSWORD=example -p 80:80 wordpress
