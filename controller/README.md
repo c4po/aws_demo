@@ -38,7 +38,8 @@ controller bash
 ```
 * add more wordpress node to cluster
 ```
- docker run -d --net=trinimbus -e WORDPRESS_DB_HOST=db -e WORDPRESS_DB_PASSWORD=example -p 80:80 wordpress
+eval "$(docker-machine env --swarm swarm-master)"
+docker-compose --x-networking --x-network-driver overlayer scale wordpress=3
 ```
 
 ### Notes:

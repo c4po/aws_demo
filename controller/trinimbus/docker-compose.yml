@@ -1,5 +1,13 @@
+nginx:
+  image: c4po/trinimbus-nginx
+  ports:
+    - "443:443"
+  links:
+    - wordpress
+
 wordpress:
   image: wordpress
+  container_name: wordpress
   environment:
     - "WORDPRESS_DB_HOST=db"
     - "WORDPRESS_DB_PASSWORD=example"

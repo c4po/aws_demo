@@ -1,6 +1,6 @@
 From ubuntu:vivid
 
-RUN apt-get update && apt-get install -y curl unzip
+RUN apt-get update && apt-get install -y curl unzip vim
 
 #install docker engine 
 RUN curl https://get.docker.com|sh
