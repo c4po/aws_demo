@@ -12,8 +12,3 @@ db:
   container_name: db
   environment:
     MYSQL_ROOT_PASSWORD: example
-
-nginx:
-  image: c4po/trinimbus-nginx
-  ports:
-    - "443:443"
