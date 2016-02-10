@@ -11,7 +11,7 @@ BASE_IMAGE=ami-677b6b06
 
 docker-machine create --driver amazonec2 \
 --amazonec2-access-key ${AWS_ACCESS_KEY_ID} --amazonec2-secret-key ${AWS_SECRET_ACCESS_KEY} \
---amazonec2-region us-west-2 \
+--amazonec2-region us-east-1 \
 --amazonec2-ami ${BASE_IMAGE} \
 --amazonec2-vpc-id ${VPC_ID} consul
 
@@ -26,7 +26,7 @@ docker-machine create --driver amazonec2 \
 --swarm --swarm-master --swarm-image="swarm:1.0.0" \
 --swarm-discovery="consul://$(docker-machine ip consul):8500" \
 --amazonec2-access-key ${AWS_ACCESS_KEY_ID} --amazonec2-secret-key ${AWS_SECRET_ACCESS_KEY} \
---amazonec2-region us-west-2 --amazonec2-zone a \
+--amazonec2-region us-east-1 --amazonec2-zone a \
 --amazonec2-vpc-id ${VPC_ID} \
 --amazonec2-ami ${BASE_IMAGE} \
 --engine-opt="cluster-store=consul://$(docker-machine ip consul):8500" \
@@ -38,7 +38,7 @@ docker-machine create --driver amazonec2 \
 --swarm --swarm-image="swarm:1.0.0" \
 --swarm-discovery="consul://$(docker-machine ip consul):8500" \
 --amazonec2-access-key $AWS_ACCESS_KEY_ID --amazonec2-secret-key $AWS_SECRET_ACCESS_KEY \
---amazonec2-region us-west-2  --amazonec2-zone a \
+--amazonec2-region us-east-1  --amazonec2-zone a \
 --amazonec2-vpc-id ${VPC_ID} \
 --amazonec2-ami ${BASE_IMAGE} \
 --engine-opt="cluster-store=consul://$(docker-machine ip consul):8500" \
@@ -50,7 +50,7 @@ docker-machine create --driver amazonec2 \
 --swarm --swarm-image="swarm:1.0.0" \
 --swarm-discovery="consul://$(docker-machine ip consul):8500" \
 --amazonec2-access-key $AWS_ACCESS_KEY_ID --amazonec2-secret-key $AWS_SECRET_ACCESS_KEY \
---amazonec2-region us-west-2  --amazonec2-zone b \
+--amazonec2-region us-east-1  --amazonec2-zone b \
 --amazonec2-vpc-id ${VPC_ID} \
 --amazonec2-ami ${BASE_IMAGE} \
 --engine-opt="cluster-store=consul://$(docker-machine ip consul):8500" \

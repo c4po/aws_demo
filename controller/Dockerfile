@@ -17,9 +17,9 @@ RUN curl -L https://github.com/docker/compose/releases/download/1.5.1/docker-com
 ENV MACHINE_STORAGE_PATH=/machine-storage
 VOLUME /machine-storage
 
-WORKDIR /usr/local/bin/trinimbus
 
-COPY ./trinimbus/ /usr/local/bin/trinimbus/
+COPY ./scripts/ /root/bin/
 
+WORKDIR /root/bin
 
 ENTRYPOINT bash

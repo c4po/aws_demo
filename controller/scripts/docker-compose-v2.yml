@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  db:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+  wordpress:
+    image: wordpress
+    links:
+      - db
+    environment:
+      - "WORDPRESS_DB_HOST=db"
+      - "WORDPRESS_DB_PASSWORD=example"
+    ports:
+      - "80:80"
+
+networks:
+  default:
+    driver: overlay
